@@ -1,10 +1,14 @@
 <template>
-
 </template>
 
 <script>
 export default {
-  name: "ManualsView"
+  name: "ManualsView",
+  computed:{
+    manualsId(){
+      return this.$route.params.id
+    }
+  }
 }
 </script>
 
