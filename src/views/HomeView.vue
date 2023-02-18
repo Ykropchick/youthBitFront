@@ -1,17 +1,18 @@
 <template>
   <div class="container">
     <VMap/>
+
     <h1 class="text-center team__header">Наша команда</h1>
     <div class="row d-flex justify-content-center">
       <div class="row">
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/office_1.png" alt="">
+          <img class="image" src="../assets/office_1.png" alt="">
         </div>
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/office_2.png" alt="">
+          <img class="image" src="../assets/office_2.png" alt="">
         </div>
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/office_3.png" alt="">
+          <img class="image" src="../assets/office_3.png" alt="">
         </div>
       </div>
     </div>
@@ -20,13 +21,13 @@
     <div class="row d-flex justify-content-center">
       <div class="row">
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/team_1.png" alt="">
+          <img class="image" src="../assets/team_1.png" alt="">
         </div>
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/team_2.png" alt="">
+          <img class="image" src="../assets/team_2.png" alt="">
         </div>
         <div class="col-lg-4 col-md-12">
-          <img class="office_image" src="../assets/team_3.png" alt="">
+          <img class="image" src="../assets/team_3.png" alt="">
         </div>
       </div>
     </div>
@@ -50,7 +51,7 @@ export default {
 .team__header{
   margin-top: 40px;
 }
-.office_image{
+.image{
   height: 300px;
   margin-top: 20px;
   width: 100%;

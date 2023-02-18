@@ -68,6 +68,7 @@ export default {
   height: 300px;
   border: solid 2px black;
   margin: 10px;
+  cursor: pointer;
 }
 .module_blocks{
   margin-top: 40px;

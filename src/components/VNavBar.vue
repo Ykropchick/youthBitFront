@@ -10,8 +10,8 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="navbar-brand ">
-              <span class="nav__item">Карта</span>
+            <a class="navbar-brand" @click="$router.push('/notifications')">
+              <span class="nav__item">Уведомления</span>
             </a>
           </li>
           <li class="nav-item">
