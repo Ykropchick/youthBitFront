@@ -1,30 +1,7 @@
 <template>
-<!--  <div>-->
-<!--    <nav class="navbar navbar-light bg-light" >-->
-<!--      <div class="container-fluid">-->
-<!--        <a class="navbar-brand nav__element logo" @click="this.$router.push('/')">-->
-<!--          <span class="logo_word_beg">РОС</span><span class="logo_word_end">молодежь</span>-->
-<!--        </a>-->
-<!--        <div>-->
-<!--          <a class="navbar-brand ">-->
-<!--            <span class="nav__item">Отделы</span>-->
-<!--          </a>-->
-<!--          <a class="navbar-brand ">-->
-<!--            <span class="nav__item">Уведомления</span>-->
-<!--          </a>-->
-<!--          <a class="navbar-brand ">-->
-<!--            <span class="nav__item">Контакты</span>-->
-<!--          </a>-->
-<!--          <a class="navbar-brand ">-->
-<!--            <span class="nav__item">Карта</span>-->
-<!--          </a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </nav>-->
-<!--  </div>-->
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light nav_container">
-<!--    <div class="container-fluid nav_container">-->
-      <a class="navbar-brand nav__logo">
+      <a @click="this.$router.push('/')" class="navbar-brand nav__logo">
         <span class="logo_word_beg">РОС</span><span class="logo_word_end">молодежь</span>
       </a>
       <button class="navbar-toggler nav__toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,17 +21,21 @@
           </li>
           <li class="nav-item">
             <a class="navbar-brand ">
-              <span class="nav__item">Карта</span>
+              <span class="nav__item">Отдел</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="navbar-brand ">
-              <span class="nav__item">Отделы</span>
+              <span class="nav__item">Мероприятия</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a @click="this.$router.push('/log-in')" class="navbar-brand ">
+              <span class="nav__item">LogIn</span>
             </a>
           </li>
         </ul>
       </div>
-<!--    </div>-->
   </nav>
 </template>
 
@@ -88,6 +69,9 @@ export default {
 }
 .nav_container{
   width: 100%;
+}
+.nav__logo{
+  cursor: pointer;
 }
 .nav__toggleButton{
   margin-right: 25px;
