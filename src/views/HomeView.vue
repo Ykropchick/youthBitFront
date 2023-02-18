@@ -2,7 +2,7 @@
   <div class="container">
     <VMap/>
     <h1 class="text-center team__header">Наша команда</h1>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <div class="row">
         <div class="col-lg-4 col-md-12">
           <img class="office_image" src="../assets/office_1.png" alt="">
@@ -17,7 +17,7 @@
     </div>
 
     <h1 class="text-center team__header">Наш офис</h1>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <div class="row">
         <div class="col-lg-4 col-md-12">
           <img class="office_image" src="../assets/team_1.png" alt="">

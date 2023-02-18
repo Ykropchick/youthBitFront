@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-center">Модуль {{manualsId}}</h1>
-    <div class="row module_blocks">
+    <div class="row module_blocks d-flex justify-content-center">
       <div class="col-4 manualWindow" v-for="manual in this.manuals">
         <VManualBlock :name="manual.name" :description="manual.description"/>
       </div>

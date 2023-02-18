@@ -1,6 +1,9 @@
 <template>
-  <h3 class="name text-center">{{this.name}}</h3>
-  <p class="description">{{this.description}}</p>
+  <div>
+    <h3 class="name text-center">{{this.name}}</h3>
+    <p class="description">{{this.description}}</p>
+  </div>
+
 </template>
 
 <script>
