@@ -22,12 +22,12 @@
 <!--      </div>-->
 <!--    </nav>-->
 <!--  </div>-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav_container">
+<!--    <div class="container-fluid nav_container">-->
+      <a class="navbar-brand nav__logo">
         <span class="logo_word_beg">РОС</span><span class="logo_word_end">молодежь</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler nav__toggleButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
@@ -54,7 +54,7 @@
           </li>
         </ul>
       </div>
-    </div>
+<!--    </div>-->
   </nav>
 </template>
 
@@ -86,5 +86,10 @@ export default {
 .navbar-brand{
   margin: 0 3vh;
 }
-
+.nav_container{
+  width: 100%;
+}
+.nav__toggleButton{
+  margin-right: 25px;
+}
 </style>
