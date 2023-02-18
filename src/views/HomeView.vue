@@ -1,34 +1,57 @@
 <template>
   <div class="container">
-    <img class="rounded mx-auto d-block" src="../assets/map.jpg" id="map" alt="" usemap="#workmap">
-    <map name="workmap">
-      <area class="tutorial" @click="this.$router.push('/manuals/1')" shape="rect" coords="170,14,187,28"  alt="">
-      <area class="tutorial" @click="this.$router.push('/manuals/2')" shape="rect" coords="86,136,106,145" alt="">
-      <area class="tutorial" @click="this.$router.push('/manuals/3')" shape="rect" coords="158,245,174,259" alt="">
-      <area class="tutorial" @click="this.$router.push('/manuals/4')" shape="rect" coords="114,332,131,344" alt="">
-      <area class="tutorial" @click="this.$router.push('/manuals/5')" shape="rect" coords="125,426,143,441" alt="">
-      <area class="tutorial" @click="this.$router.push('/manuals/6')" shape="rect" coords="111,503,130,514" alt="">
-    </map>
+    <VMap/>
+    <h1 class="text-center team__header">Наша команда</h1>
+    <div class="row">
+      <div class="row">
+        <div class="col-4">
+          <img class="office_image" src="../assets/office_1.png" alt="">
+        </div>
+        <div class="col-4">
+          <img class="office_image" src="../assets/office_2.png" alt="">
+        </div>
+        <div class="col-4">
+          <img class="office_image" src="../assets/office_3.png" alt="">
+        </div>
+      </div>
+    </div>
 
+    <h1 class="text-center team__header">Наша офис</h1>
+    <div class="row">
+      <div class="row">
+        <div class="col-4">
+          <img class="office_image" src="../assets/team_1.png" alt="">
+        </div>
+        <div class="col-4">
+          <img class="office_image" src="../assets/team_2.png" alt="">
+        </div>
+        <div class="col-4">
+          <img class="office_image" src="../assets/team_3.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 
 </template>
 
 <script>
+import VMap from "@/components/VMap.vue";
+
 export default {
   name: "HomeView",
+  components: {VMap},
   methods:{
-    click(tutorial){
-      console.log(tutorial)
-    }
+
   }
 }
 </script>
 
 <style scoped>
-#map{
+.team__header{
+  margin-top: 40px;
 }
-.tutorial{
-  cursor: pointer;
+.office_image{
+  height: 300px;
+  width: 100%;
 }
 </style>
