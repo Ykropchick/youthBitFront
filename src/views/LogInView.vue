@@ -71,7 +71,7 @@ export default {
             console.log(response.data)
             const firstname = response.data.firstname
             const lastname = response.data.lastname
-            const IsHr = response.data.HR_link
+            const IsHr = response.data.is_HR
             localStorage.setItem('firstname', firstname)
             localStorage.setItem('lastname', lastname)
             localStorage.setItem('IsHr', IsHr)
