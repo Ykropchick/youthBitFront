@@ -1,19 +1,28 @@
-# youth_bit
+### Реализованная функциональность
+___
+* Сверастано 5 страниц
+* Подключение к бэкэнду
+* Создали макет интерактивной карты
 
-## Project setup
-```
-npm install
-```
+### Особенность проекта в следующем:
+___
+* улучшение дизайна
+* досоздание Основных страниц
+* переход с localstorage к coockies
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Основной стек технологий:
+___
+* JavaScript
+* Vue
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### УСТАНОВКА
+___
+Выполните `` npm run serve``
+### База данных
+___
+
+-
+
+### Установка зависимостей проекта
+`` npm install``
