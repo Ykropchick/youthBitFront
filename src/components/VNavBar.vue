@@ -30,11 +30,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="navbar-brand ">
-              <span class="nav__item">Мероприятия</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a @click="this.$router.push('/log-in')" class="navbar-brand ">
               <span class="nav__item">LogIn</span>
             </a>
