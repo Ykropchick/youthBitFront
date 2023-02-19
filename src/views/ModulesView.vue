@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="text-center">Модуль {{manualsId}}</h1>
-    <div class="row module_blocks d-flex justify-content-center">
-      <div class="col-4 manualWindow" v-for="manual in this.manuals">
+    <h1 class="text-center">Модуль {{modulesId}}</h1>
+    <div class="row module_blocks d-flex justify-content-center" >
+      <div class="col-4 manualWindow" v-for="manual in this.manuals" @click="this.$router.push(`/modules/${modulesId}/${manual.pk}`)">
         <VManualBlock :name="manual.name" :description="manual.description"/>
       </div>
     </div>
@@ -11,52 +11,29 @@
 
 <script>
 import VManualBlock from "@/components/VManualBlock.vue";
+import axios from "axios";
 
 export default {
   name: "ModulesView",
   components: {VManualBlock},
   computed:{
-    manualsId(){
+    modulesId(){
       return this.$route.params.id
     }
   },
   data() {
     return{
-      manuals: [
-        {
-          name: 'Обо всем',
-          description: "Все обо всем"
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-        {
-          name: 'Обо всем',
-          description: "Все обо всем"
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-        {
-          name: "Не о чем",
-          description: "Все не о чем",
-        },
-      ]
+      manuals: []
     }
+  },
+  created() {
+    axios
+        .get(`/api/tutorials/${this.modulesId}`)
+        .then(response =>{
+          this.manuals = response.data
+        }).catch(error =>{
+          console.log(error)
+        })
   }
 
 }

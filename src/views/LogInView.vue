@@ -9,13 +9,13 @@
         <form>
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="form1Example13" class="form-control form-control-lg" />
+            <input v-model="email" type="email" id="form1Example13" class="form-control form-control-lg" />
             <label class="form-label" for="form1Example13">Email address</label>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-4">
-            <input type="password" id="form1Example23" class="form-control form-control-lg" />
+            <input v-model="password" type="password" id="form1Example23" class="form-control form-control-lg" />
             <label class="form-label" for="form1Example23">Password</label>
           </div>
 
@@ -25,15 +25,11 @@
               <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
               <label class="form-check-label" for="form1Example3"> Remember me </label>
             </div>
-            <a href="#!">Forgot password?</a>
+            <a href="#">Forgot password?</a>
           </div>
-
-          <!-- Submit button -->
           <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            <button @click.prevent="logIn" class="btn btn-primary btn-lg btn-block">Sign in</button>
           </div>
-
-
         </form>
       </div>
     </div>
@@ -41,8 +37,53 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "VLogInView"
+  name: "VLogInView",
+  data(){
+    return{
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    logIn(){
+      const data = {
+        'email': this.email,
+        'password': this.password,
+      }
+
+      axios
+          .post('/api/auth/token/', data)
+          .then(response => {
+            const token = response.data.access
+            axios.defaults.headers.common['Authorization'] = "Bearer " + token
+            localStorage.setItem('token', token)
+            this.$store.commit('setToken', token)
+          })
+          .catch(error =>{
+            console.log(error)
+          })
+      axios
+          .get('api/auth/me/')
+          .then(response =>{
+            console.log(response.data)
+            const firstname = response.data.firstname
+            const lastname = response.data.lastname
+            const IsHr = response.data.HR_link
+            localStorage.setItem('firstname', firstname)
+            localStorage.setItem('lastname', lastname)
+            localStorage.setItem('IsHr', IsHr)
+            this.$store.commit('setUser', IsHr, firstname, lastname)
+          })
+          .catch(error =>{
+            console.log(error)
+          })
+      this.$router.push('/')
+    }
+
+  }
 }
 </script>
 

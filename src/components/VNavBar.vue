@@ -14,14 +14,19 @@
               <span class="nav__item">Уведомления</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="this.$router.push('/noobs')" v-if="this.$store.state.IsHr">
             <a class="navbar-brand ">
-              <span class="nav__item">Контакты</span>
+              <span class="nav__item">Нубики</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-else>
             <a class="navbar-brand ">
-              <span class="nav__item">Отдел</span>
+              <span class="nav__item">Департамент</span>
+            </a>
+          </li>
+          <li class="nav-item " @click="this.$router.push('/personal-account')">
+            <a class="navbar-brand ">
+              <span class="nav__item">Личный кабинет</span>
             </a>
           </li>
           <li class="nav-item">
@@ -39,7 +44,7 @@
   </nav>
 </template>
 
-<script>
+<script >
 export default {
   name: "VNavBar"
 }

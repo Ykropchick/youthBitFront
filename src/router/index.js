@@ -6,6 +6,8 @@ import ModulesView from "@/views/ModulesView.vue";
 import NotificationsView from "@/views/NotificationsView.vue";
 import NotificationView from "@/views/NotificationView.vue";
 import ManualView from "@/views/ManualView.vue";
+import NoobsView from "@/views/NoobsView.vue";
+import PersonalAccountView from "@/views/PersonalAccountView.vue";
 
 
 const routes = [
@@ -25,7 +27,7 @@ const routes = [
     component: ModulesView
   },
   {
-    path: '/modules/:id/:manual_id',
+    path: '/modules/:id/:manualId',
     name: 'manual',
     component: ManualView
   },
@@ -38,6 +40,16 @@ const routes = [
     path: '/notifications/:id',
     name: 'notification',
     component: NotificationView
+  },
+  {
+    path: '/noobs',
+    name: 'noobs',
+    component: NoobsView
+  },
+  {
+    path: '/personal-account',
+    name: 'personal-account',
+    component: PersonalAccountView
   },
 ]
 

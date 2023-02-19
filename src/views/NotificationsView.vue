@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <div class="row notification_block d-flex justify-content-center" @click="$router.push(`notifications/${notification.id}`)" v-for="notification in this.notifications" >
+    <div class="row notification_block d-flex justify-content-center" @click="$router.push(`notifications/${notification.pk}`)" v-for="notification in this.notifications" >
+
       <div class="text-center">
-        {{notification.name}}
       </div>
+      {{notification.title}}
       <div class="text-center">
-        От: {{notification.from}}
+        От: {{notification.sender}}
       </div>
       <div class="text-end">
         {{notification.date}}
@@ -15,37 +16,24 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Notifications",
   data(){
     return{
-      notifications:[
-        {
-          id: 0,
-          name:"Hello",
-          date:"12-02-03",
-          from:"Vasya",
-        },
-        {
-          id: 1,
-          name:"Hello",
-          date:"12-02-03",
-          from:"Vasya",
-        },
-        {
-          id: 2,
-          name:"Hello",
-          date:"12-02-03",
-          from:"Vasya",
-        },
-        {
-          id: 3,
-          name:"Hello",
-          date:"12-02-03",
-          from:"Vasya",
-        }
-      ]
+      notifications:{},
     }
+  },
+  created() {
+    axios
+        .get('/api/notifications/')
+        .then(response =>{
+          this.notifications = response.data
+        })
+        .catch(error =>{
+          console.log(error)
+        })
   }
 }
 </script>

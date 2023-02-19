@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <VMap/>
-
+    <VMap :modules="modules"/>
     <h1 class="text-center team__header">Наша команда</h1>
     <div class="row d-flex justify-content-center">
       <div class="row">
@@ -37,12 +36,26 @@
 
 <script>
 import VMap from "@/components/VMap.vue";
+import axios from "axios";
+import TestWindow from "@/components/TestWindow.vue";
 
 export default {
   name: "HomeView",
-  components: {VMap},
-  methods:{
-
+  components: {TestWindow, VMap},
+  data() {
+    return{
+      modules: {}
+    }
+  },
+  created() {
+    axios
+        .get('/api/tutorials/')
+        .then(response =>{
+          this.modules = response.data
+          console.log(this.modules)
+        }).catch(error =>{
+          console.log(error)
+        })
   }
 }
 </script>
